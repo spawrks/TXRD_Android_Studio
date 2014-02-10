@@ -1,0 +1,69 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="24dp"
+        android:text="@string/header_desc" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="8dp"
+        >
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:orientation="horizontal">
+        
+   		 <Button
+   		     android:id="@+id/imageButtonSched"
+   		     android:layout_width="match_parent"
+   		     android:layout_height="wrap_content"
+   		     android:layout_weight="1"
+   		     android:clickable="true"
+   		     android:onClick="openScheduleLink"
+   		     android:text="@string/schedule_button" />
+
+  		<Button
+  		    android:id="@+id/imageButtonTix"
+  		    android:layout_width="match_parent"
+  		    android:layout_height="wrap_content"
+  		    android:layout_weight="1"
+  		    android:clickable="true"
+  		    android:onClick="openTicketsLink"
+  		    android:text="@string/tickets_button" />
+   
+    </LinearLayout><!--ends first row of buttons  -->
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:orientation="horizontal">
+  		
+        <Button
+            android:id="@+id/buttonTeams"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:onClick="seeTeams"
+            android:text="@string/teams"/>
+
+        <Button
+            android:id="@+id/buttonPhotos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:layout_weight="1"/>
+        
+  	</LinearLayout><!--  ends second row of buttons -->
+    
+</LinearLayout> <!-- ends all button rows -->
+</LinearLayout>
