@@ -27,9 +27,9 @@ public class MainActivity extends Activity {
 //        dammit, why do you keep killing the app?? are you too big?
         Intent intent = new Intent(this, ScheduleView.class);
         startActivity(intent);
-//    	scheduleView = (WebView)findViewById(R.id.scheduleCard);
-//		scheduleView.getSettings().setBuiltInZoomControls(true);
-//		scheduleView.loadUrl("file:///android_R/drawable/sched_2014.jpg");
+    	scheduleView = (WebView)findViewById(R.id.scheduleCard);
+	    scheduleView.getSettings().setBuiltInZoomControls(true);
+	    scheduleView.loadUrl("file:///android_R/drawable/sched_2014.jpg");
     	
     }
     public void openTicketsLink(View v) { 
