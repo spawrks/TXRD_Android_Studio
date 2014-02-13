@@ -6,7 +6,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="header_desc">Click Schedule to find out the date of the next bout!</string>
 
-    <color name="black">#000000</color>
 
     <string name="schedule_button">Schedule</string>
     <string name="tickets_button">Tickets</string>
