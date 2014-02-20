@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#000000</color>
-    <color name="pink">#ff1493</color>
+    <color name="hellcat_pink">#ff1493</color>
+    <color name="bomb_green">#33ff33</color>
+    <color name="roller_blue">#0033ee</color>
+    <color name="rhinestone_red">#ff0000</color>
+    <color name="puta_orange">#ff6600</color>
 </resources>

@@ -9,16 +9,35 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.webkit.WebView;
-//import android.widget.Button;
+import android.widget.Button;
 
 public class MainActivity extends Activity {
 
+    private Button scheduleButton = null;
+    private Button ticketsButton = null;
+    private Button teamsButton = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        scheduleButton = (Button) findViewById(R.id.imageButtonSched);
+        scheduleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openScheduleLink(view);
+            }
+        });
+
+        ticketsButton = (Button) findViewById(R.id.imageButtonTix);
+        ticketsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openTicketsLink(view);
+            }
         
+    });
     }
 
     @Override

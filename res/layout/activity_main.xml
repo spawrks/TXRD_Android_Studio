@@ -28,7 +28,6 @@
    		     android:layout_height="wrap_content"
    		     android:layout_weight="1"
    		     android:clickable="true"
-   		     android:onClick="openScheduleLink"
    		     android:text="@string/schedule_button" />
 
   		<Button
@@ -37,7 +36,6 @@
   		    android:layout_height="wrap_content"
   		    android:layout_weight="1"
   		    android:clickable="true"
-  		    android:onClick="openTicketsLink"
   		    android:text="@string/tickets_button" />
    
     </LinearLayout><!--ends first row of buttons  -->

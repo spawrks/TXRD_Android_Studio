@@ -14,5 +14,14 @@
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>
     <string name="teams">Teams</string>
+    <string-array name="choose_team">
+        <item>Choose a Team</item>
+        <item>Cherry Bombs</item>
+        <item>Hellcats</item>
+        <item>Holy Rollers</item>
+        <item>Putas del Fuego</item>
+        <item>Rhinestone Cowgirls</item>
+        <item>Hired Gun$</item>
+    </string-array>
 
 </resources>
