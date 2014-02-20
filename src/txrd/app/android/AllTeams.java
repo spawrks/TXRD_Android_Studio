@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.support.v4.app.NavUtils;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -20,6 +21,7 @@ public class AllTeams extends Activity {
 
 
     private Spinner teamSpinner = null;
+    private WebView webView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +35,41 @@ public class AllTeams extends Activity {
         switch (position){
             case 0:
                 //default
+                webView = (WebView) findViewById(R.id.teamHeaderView);
+                webView.loadUrl("http://txrd.bellastorage.com/wp-content/uploads/2014/02/txrd-logo_spelled-out_web2.png");
                 break;
             case 1:
                 Log.e("TAG", "Bombs Chosen");//this isn't registering...:/
+                //change background to green
+                //load bomb roster
+                //load bomb image
                 break;
+            case 2:
+                webView = (WebView) findViewById(R.id.teamHeaderView);
+                webView.loadUrl("https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-frc3/t31/1655773_671026886273467_1415148697_o.jpg");//this isn't changing my header.
+                //change background to pink
+                //load cat roster
+                //load cat image
+                break;
+            case 3:
+                //change background to blue
+                //change text to white
+                //load roller roster
+                //load roller image
+            case 4:
+                //change background to red
+                //load rc roster
+                //load rc image
+                break;
+            case 5:
+                //change background to orange
+                //load puta roster
+                //load puta image
+                break;
+            case 6:
+                //change background to teal
+                //load gun roster
+                //load gun image
             default:
                 break;
         }
