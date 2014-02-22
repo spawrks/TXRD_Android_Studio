@@ -3,6 +3,7 @@ package txrd.app.android;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
@@ -11,8 +12,11 @@ import android.view.MenuItem;
 import android.support.v4.app.NavUtils;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.AdapterView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -23,6 +27,7 @@ public class AllTeams extends Activity {
     private Spinner teamSpinner = null;
     private WebView webView;
 
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -30,62 +35,84 @@ public class AllTeams extends Activity {
 
 
         teamSpinner = (Spinner) findViewById(R.id.teamSelector);
-        int position = teamSpinner.getSelectedItemPosition();
-        Intent implicitIntent = null;
-        switch (position){
-            case 0:
-                //default
+        teamSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            RelativeLayout teamWrapper = (RelativeLayout) findViewById(R.id.totalTeamView);
+            TextView roster = (TextView) findViewById(R.id.rosterView);
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                switch (position){
+                    case 0:
+                        //default
+                        webView = (WebView) findViewById(R.id.teamHeaderView);
+                        webView.loadUrl("http://txrd.bellastorage.com/wp-content/uploads/2014/02/txrd-logo_spelled-out_web2.png");
+                        teamWrapper.setBackgroundColor(getResources().getColor(R.color.black));
+                        roster.setText(R.string.no_team);
+                        roster.setTextColor(Color.WHITE);
+                        break;
+                    case 1:
+                        Log.e("TAG", "Bombs Chosen");
+                        teamWrapper.setBackgroundColor(getResources().getColor(R.color.bomb_green));
+                        roster.setText(R.string.cherry_bombs);
+                        roster.setTextColor(Color.BLACK);
+                        //load bomb image
+                        break;
+                    case 2:
+                        Log.e("TAG", "Cats Chosen");
+                        teamWrapper.setBackgroundColor(getResources().getColor(R.color.hellcat_pink));
+                        roster.setText(R.string.hellcats);
+                        roster.setTextColor(Color.BLACK);
+                        //load cat image
+                        break;
+                    case 3:
+                        Log.e("TAG", "Rollers Chosen");
+                        teamWrapper.setBackgroundColor(getResources().getColor(R.color.roller_blue));
+                        roster.setTextColor(Color.WHITE);
+                        roster.setText(R.string.holy_rollers);
+                        //load roller image
+                        break;
+                    case 4:
+                        Log.e("TAG", "Putas Chosen");
+                        teamWrapper.setBackgroundColor(getResources().getColor(R.color.puta_red));
+                        roster.setText(R.string.putas);
+                        roster.setTextColor(Color.BLACK);
+                        //load puta image
+                        break;
+                    case 5:
+                        Log.e("TAG", "Cowgirls Chosen");
+                        teamWrapper.setBackgroundColor(getResources().getColor(R.color.rhinestone_red));
+                        roster.setText(R.string.rhinestone_cowgirls);
+                        roster.setTextColor(Color.WHITE);
+
+                        //load rc image
+                        break;
+                    case 6:
+                        Log.e("TAG", "Guns Chosen");
+                        teamWrapper.setBackgroundColor(getResources().getColor(R.color.guns_teal));
+                        roster.setText(R.string.hired_guns);
+                        roster.setTextColor(Color.BLACK);
+                        //load gun image
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                teamWrapper.setBackgroundColor(getResources().getColor(R.color.black));
                 webView = (WebView) findViewById(R.id.teamHeaderView);
                 webView.loadUrl("http://txrd.bellastorage.com/wp-content/uploads/2014/02/txrd-logo_spelled-out_web2.png");
-                break;
-            case 1:
-                Log.e("TAG", "Bombs Chosen");//this isn't registering...:/
-                //change background to green
-                //load bomb roster
-                //load bomb image
-                break;
-            case 2:
-                webView = (WebView) findViewById(R.id.teamHeaderView);
-                webView.loadUrl("https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-frc3/t31/1655773_671026886273467_1415148697_o.jpg");//this isn't changing my header.
-                //change background to pink
-                //load cat roster
-                //load cat image
-                break;
-            case 3:
-                //change background to blue
-                //change text to white
-                //load roller roster
-                //load roller image
-            case 4:
-                //change background to red
-                //load rc roster
-                //load rc image
-                break;
-            case 5:
-                //change background to orange
-                //load puta roster
-                //load puta image
-                break;
-            case 6:
-                //change background to teal
-                //load gun roster
-                //load gun image
-            default:
-                break;
-        }
-        if (implicitIntent!= null){
-            if(isIntentAvailable(implicitIntent) == true) {
-                startActivity(implicitIntent);
-            }else{
-                Toast.makeText(this, "no application availble", Toast.LENGTH_LONG).show();
+                roster.setText(R.string.no_team);
+                roster.setTextColor(Color.WHITE);
             }
-        }
+        });
 
 		// Show the Up button in the action bar.
 		setupActionBar();
 
 
 	}
+
 
     public boolean isIntentAvailable(Intent intent) {
         PackageManager packageManager = getPackageManager();

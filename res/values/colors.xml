@@ -4,6 +4,7 @@
     <color name="hellcat_pink">#ff1493</color>
     <color name="bomb_green">#33ff33</color>
     <color name="roller_blue">#0033ee</color>
-    <color name="rhinestone_red">#ff0000</color>
-    <color name="puta_orange">#ff6600</color>
+    <color name="rhinestone_red">#990000</color>
+    <color name="puta_red">#ff0000</color>
+    <color name="guns_teal">#00ccff</color>
 </resources>

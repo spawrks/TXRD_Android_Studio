@@ -23,5 +23,12 @@
         <item>Rhinestone Cowgirls</item>
         <item>Hired Gun$</item>
     </string-array>
+    <string name="cherry_bombs">Captain\nCo-Captain \nBomb3 \nBomb4 \nBomb56 \nBomb7 \nBomb8 \nBomb9 \nBomb10</string>
+    <string name="hellcats">Captain\nCo-Captain \nCat3 \nCat4 \nCat5 \nCat6 \nCat7 \nCat8 \nCat9 \nCat10</string>
+    <string name="holy_rollers">Captain \nCo-Captain \nRoller1 \nRoller2 \nRoller3 \nRoller4 \nRoller5 \nRoller6 \nRoller7 \nRoller8 \nRoller9 \nRoller10</string>
+    <string name="putas">Captain \nCo-Captain \nPuta1 \nPuta2 \nPuta3 \nPuta4 \nPuta5 \nPuta6 \nPuta7 \nPuta8 \nPuta9 \nPuta10</string>
+    <string name="rhinestone_cowgirls">Captain \nCo-Captain \nRhinestone1 \nRhinestone2 \nRhinestone3 \nRhinestone4 \nRhinestone5 \nRhinestone6 \nRhinestone7 \nRhinestone8 \nRhinestone9 \nRhinestone10</string>
+    <string name="hired_guns">Gun1 \nGun2 \nGun3</string>
+    <string name="no_team">Select a team to view their roster!</string>
 
 </resources>
