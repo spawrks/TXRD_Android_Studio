@@ -4,11 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.KeyEvent;
 //import android.view.Display;
 import android.view.Menu;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.Button;
 
 public class MainActivity extends Activity {
@@ -16,6 +14,7 @@ public class MainActivity extends Activity {
     private Button scheduleButton = null;
     private Button ticketsButton = null;
     private Button teamsButton = null;
+    private Button rulesButton = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +37,24 @@ public class MainActivity extends Activity {
             }
         
     });
+
+        teamsButton = (Button) findViewById(R.id.buttonTeams);
+        teamsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                seeTeams(v);
+            }
+        });
+
+        rulesButton = (Button) findViewById(R.id.buttonRules);
+        rulesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openRulesView();
+            }
+        });
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -63,6 +79,10 @@ public class MainActivity extends Activity {
 	    startActivity(i); 
 }
 
+    public void openRulesView(){
+        Intent intent = new Intent(this,RulesView.class);
+        startActivity(intent);
+    }
 
 
     public void seeTeams(View view) {

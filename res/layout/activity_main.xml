@@ -55,12 +55,13 @@
             android:text="@string/teams"/>
 
         <Button
-            android:id="@+id/buttonPhotos"
+            android:id="@+id/buttonRules"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
-            android:layout_weight="1"/>
-        
+            android:layout_weight="1"
+            android:text="@string/rules"/>
+
   	</LinearLayout><!--  ends second row of buttons -->
     
 </LinearLayout> <!-- ends all button rows -->

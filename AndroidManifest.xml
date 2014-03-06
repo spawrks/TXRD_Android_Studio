@@ -40,6 +40,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="txrd.app.android.MainActivity" />
         </activity>
+        <activity
+            android:name="txrd.app.android.RulesView"
+            android:parentActivityName="txrd.app.android.MainActivity" >
+        </activity>
     </application>
 
 </manifest>

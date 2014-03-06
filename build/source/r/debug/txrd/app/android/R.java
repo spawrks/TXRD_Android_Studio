@@ -21,6 +21,7 @@ public final class R {
         public static final int puta_red=0x7f050004;
         public static final int rhinestone_red=0x7f050005;
         public static final int roller_blue=0x7f050006;
+        public static final int white=0x7f050007;
     }
     public static final class dimen {
         public static final int activity_horizontal_margin=0x7f060000;
@@ -28,16 +29,22 @@ public final class R {
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
-        public static final int sched_2014=0x7f020001;
+        public static final int rules_header_511=0x7f020001;
+        public static final int sched_2014=0x7f020002;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0009;
-        public static final int buttonPhotos=0x7f0a0008;
+        public static final int action_settings=0x7f0a000e;
+        public static final int buttonRules=0x7f0a0008;
         public static final int buttonTeams=0x7f0a0007;
+        public static final int gameplay_select=0x7f0a000b;
         public static final int imageButtonSched=0x7f0a0005;
         public static final int imageButtonTix=0x7f0a0006;
+        public static final int imageView=0x7f0a0009;
         public static final int nextBout=0x7f0a0004;
+        public static final int penalties_select=0x7f0a000c;
+        public static final int position_select=0x7f0a000a;
         public static final int rosterView=0x7f0a0003;
+        public static final int selected_rules_text=0x7f0a000d;
         public static final int teamHeaderView=0x7f0a0002;
         public static final int teamSelector=0x7f0a0001;
         public static final int totalTeamView=0x7f0a0000;
@@ -45,7 +52,8 @@ public final class R {
     public static final class layout {
         public static final int activity_all_teams=0x7f030000;
         public static final int activity_main=0x7f030001;
-        public static final int schedulecard=0x7f030002;
+        public static final int activity_rules=0x7f030002;
+        public static final int schedulecard=0x7f030003;
     }
     public static final class menu {
         public static final int all_teams=0x7f090000;
@@ -56,21 +64,26 @@ public final class R {
         public static final int action_settings=0x7f070000;
         public static final int app_name=0x7f070001;
         public static final int cherry_bombs=0x7f070002;
-        public static final int header_desc=0x7f070003;
-        public static final int hellcats=0x7f070004;
-        public static final int hello_world=0x7f070005;
-        public static final int hired_guns=0x7f070006;
-        public static final int holy_rollers=0x7f070007;
-        public static final int no_team=0x7f070008;
-        public static final int putas=0x7f070009;
-        public static final int rhinestone_cowgirls=0x7f07000a;
-        public static final int schedule_button=0x7f07000b;
-        public static final int teams=0x7f07000c;
-        public static final int tickets_button=0x7f07000d;
-        public static final int title_activity_all_teams=0x7f07000e;
-        public static final int title_section1=0x7f07000f;
-        public static final int title_section2=0x7f070010;
-        public static final int title_section3=0x7f070011;
+        public static final int gameplay_desc=0x7f070003;
+        public static final int header_desc=0x7f070004;
+        public static final int hellcats=0x7f070005;
+        public static final int hello_world=0x7f070006;
+        public static final int hired_guns=0x7f070007;
+        public static final int holy_rollers=0x7f070008;
+        public static final int no_team=0x7f070009;
+        public static final int penalties_desc=0x7f07000a;
+        public static final int positions_desc=0x7f07000b;
+        public static final int putas=0x7f07000c;
+        public static final int rhinestone_cowgirls=0x7f07000d;
+        public static final int rules=0x7f07000e;
+        public static final int schedule_button=0x7f07000f;
+        public static final int teams=0x7f070010;
+        public static final int the_rules=0x7f070011;
+        public static final int tickets_button=0x7f070012;
+        public static final int title_activity_all_teams=0x7f070013;
+        public static final int title_section1=0x7f070014;
+        public static final int title_section2=0x7f070015;
+        public static final int title_section3=0x7f070016;
     }
     public static final class style {
         /** 

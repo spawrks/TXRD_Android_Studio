@@ -30,5 +30,10 @@
     <string name="rhinestone_cowgirls">Captain \nCo-Captain \nRhinestone1 \nRhinestone2 \nRhinestone3 \nRhinestone4 \nRhinestone5 \nRhinestone6 \nRhinestone7 \nRhinestone8 \nRhinestone9 \nRhinestone10</string>
     <string name="hired_guns">Gun1 \nGun2 \nGun3</string>
     <string name="no_team">Select a team to view their roster!</string>
+    <string name="rules">Rules</string>
+    <string name="positions_desc">Jammer – designated by star on her helmet and known as the sprint skater. Her object is to score one point per opponent she laps. \nLead jammer – is the jammer in the lead and the only one that can call off a jam. If a jammer steps off of the track or touches the red zone at the bottom of the track with any part of her body, she is no longer the lead jammer, regardless of her position on the track in relation to the other jammer. \nPivot – designated by a strip down the middle of her helmet and known as the pace setter for the pack. She may take over the jammer position once she has the star in her possession. \nBlocker – They set up plays to assist their jammer through the pack and blocks to stop the opposing jammer </string>
+    <string name="gameplay_desc">This is how we play</string>
+    <string name="penalties_desc">These are all the ways we fuck up.</string>
+    <string name="the_rules">The Rules</string>
 
 </resources>
