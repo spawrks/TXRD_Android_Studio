@@ -5,11 +5,13 @@
     android:gravity="center_horizontal"
     android:orientation="vertical" >
 
-    <TextView
-        android:layout_width="wrap_content"
+    <ImageView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="24dp"
-        android:text="@string/header_desc" />
+        android:cropToPadding="false"
+        android:id="@+id/main_header"
+        android:src="@drawable/default_header"
+        android:contentDescription="@string/header_desc" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

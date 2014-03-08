@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.support.v4.app.NavUtils;
+import com.parse.Parse;
+import com.parse.ParseAnalytics;
 
 public class ScheduleView extends Activity {
 

@@ -23,17 +23,35 @@
         <item>Rhinestone Cowgirls</item>
         <item>Hired Gun$</item>
     </string-array>
-    <string name="cherry_bombs">Captain\nCo-Captain \nBomb3 \nBomb4 \nBomb56 \nBomb7 \nBomb8 \nBomb9 \nBomb10</string>
-    <string name="hellcats">Captain\nCo-Captain \nCat3 \nCat4 \nCat5 \nCat6 \nCat7 \nCat8 \nCat9 \nCat10</string>
-    <string name="holy_rollers">Captain \nCo-Captain \nRoller1 \nRoller2 \nRoller3 \nRoller4 \nRoller5 \nRoller6 \nRoller7 \nRoller8 \nRoller9 \nRoller10</string>
-    <string name="putas">Captain \nCo-Captain \nPuta1 \nPuta2 \nPuta3 \nPuta4 \nPuta5 \nPuta6 \nPuta7 \nPuta8 \nPuta9 \nPuta10</string>
-    <string name="rhinestone_cowgirls">Captain \nCo-Captain \nRhinestone1 \nRhinestone2 \nRhinestone3 \nRhinestone4 \nRhinestone5 \nRhinestone6 \nRhinestone7 \nRhinestone8 \nRhinestone9 \nRhinestone10</string>
-    <string name="hired_guns">Gun1 \nGun2 \nGun3</string>
+    <string name="cherry_bombs">Annie Smokely\nLonescar\nMaya Mayhem\nNinja Please\nSacralicious\nScrappy\nMilla Jukeabitch\nTrainwreck Trina\nRolla Parks\nTricky Vicky</string>
+    <string name="hellcats">Ditzy Von Teeze\nDixie Sanchez\nGlitterotica\nMean Jolene\nSmash U Delirious\nSmitey Mouse\nSoviet Crusha\nVal Kerry\nAxe C. Dent\nIndy Jamma Jones\nMastur Peyton\nRoxxi Revolver</string>
+    <string name="holy_rollers">Atilla the Nun\nBoi Division\nCandy Slam\nElle B. Bach\nGhettostar Balactica\nLacy Bones\nMini Massacre\nRozy B. Hind\nPrissy Galore\nDyer\'s Eve\nHermione Danger</string>
+    <string name="putas">Cora Zone\nDot Stoevsky\nLyka Boss\nPea Khante\nShanxilla\nRasta Fury\nHusslepuff\nAdios Mija\nWild Carnage\nBentley Screws\nSabataj\nPutahontas</string>
+    <string name="rhinestone_cowgirls">Ali Mony\nDiablo\nDill Dozer\nDusty Doublewide\nLoretta Synn\nNicki Ticki Timebomb\nPierce\nCold Warr\nAbbey Roadkill\nSassy Squasher\nBlocktober Fest</string>
+    <string name="hired_guns">Lizard\nMad Maxican\nBessie Mae Mucho\nStr8 Jacket\nJuicy Cooter\nCatty Whompass\nBendy Davis\nSexy Sadie\nGenna Lee\nKatniss Everdemon</string>
     <string name="no_team">Select a team to view their roster!</string>
     <string name="rules">Rules</string>
-    <string name="positions_desc">Jammer – designated by star on her helmet and known as the sprint skater. Her object is to score one point per opponent she laps. \nLead jammer – is the jammer in the lead and the only one that can call off a jam. If a jammer steps off of the track or touches the red zone at the bottom of the track with any part of her body, she is no longer the lead jammer, regardless of her position on the track in relation to the other jammer. \nPivot – designated by a strip down the middle of her helmet and known as the pace setter for the pack. She may take over the jammer position once she has the star in her possession. \nBlocker – They set up plays to assist their jammer through the pack and blocks to stop the opposing jammer </string>
-    <string name="gameplay_desc">This is how we play</string>
-    <string name="penalties_desc">These are all the ways we fuck up.</string>
+    <string name="positions_desc"><b>Jammer</b> – designated by star on her helmet and known as the sprint skater. Her object is to score one point per opponent she laps. \n\n
+        <b>Lead jammer</b> – is the jammer in the lead and the only one that can call off a jam. If a jammer steps off of the track or touches the red zone at the bottom of the track with any part of her body, she is no longer the lead jammer, regardless of her position on the track in relation to the other jammer. \n\n
+        <b>Pivot</b> – designated by a strip down the middle of her helmet and known as the pace setter for the pack. She may take over the jammer position once she has the star in her possession. \n\n
+        <b>Blocker</b> – They set up plays to assist their jammer through the pack and blocks to stop the opposing jammer </string>
+    <string name="gameplay_desc"><b>Jam</b>: First whistle starts the pack, second whistle signals for the jammers to begin. A jam may last up to 60 seconds or until the lead jammer calls it off by placing both hands on her hip.\n\n
+        <b>Game Time</b>: The game consists of four 8 minute periods played between two teams.</string>
+    <string name="penalties_desc">Penalties can be minor or major. If a skater receives a <b>minor</b> penalty, she must compete in a challenge determined by the penalty wheel and if she loses her team loses a point.
+        If a skater receives a <b>major</b> penalty, she must go to the penalty box and the jam is re-skated with the same lineups (her team skates with one vacant position.)\n\n
+        <b>Possible Penalties:</b>\nHolding\n
+        Pushing\n
+        Tripping\n
+        Unnecessary Roughness\n
+        Unsportswomanlike Conduct\n
+        Illegal Blocking\n
+        Illegal Engagement (Blocking while out of bounds, Blocking skater who is out of bound, Blocking after returning to the track from out of bounds without skating a stroke.)\n
+        Failure to Yield\n
+        Use Of Forearms\n
+        High Blocking\n
+        Advancement\n
+        Obstruction\n
+        Illegal Procedure</string>
     <string name="the_rules">The Rules</string>
 
 </resources>

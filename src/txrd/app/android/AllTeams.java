@@ -17,6 +17,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import com.parse.Parse;
+import com.parse.ParseAnalytics;
 
 import java.util.List;
 
@@ -34,6 +36,7 @@ public class AllTeams extends Activity {
 		setContentView(R.layout.activity_all_teams);
 
 
+        webView = (WebView) findViewById(R.id.teamHeaderView);
         teamSpinner = (Spinner) findViewById(R.id.teamSelector);
         teamSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             RelativeLayout teamWrapper = (RelativeLayout) findViewById(R.id.totalTeamView);
@@ -43,8 +46,9 @@ public class AllTeams extends Activity {
                 switch (position){
                     case 0:
                         //default
-                        webView = (WebView) findViewById(R.id.teamHeaderView);
-                        webView.loadUrl("http://txrd.bellastorage.com/wp-content/uploads/2014/02/txrd-logo_spelled-out_web2.png");
+//                        webView = (WebView) findViewById(R.id.teamHeaderView);
+//                        webView.loadUrl("http://txrd.bellastorage.com/wp-content/uploads/2014/02/txrd-logo_spelled-out_web2.png");
+                        webView.loadUrl("http://i.imgur.com/EwJHAAh.png");
                         teamWrapper.setBackgroundColor(getResources().getColor(R.color.black));
                         roster.setText(R.string.no_team);
                         roster.setTextColor(Color.WHITE);
@@ -54,6 +58,7 @@ public class AllTeams extends Activity {
                         teamWrapper.setBackgroundColor(getResources().getColor(R.color.bomb_green));
                         roster.setText(R.string.cherry_bombs);
                         roster.setTextColor(Color.BLACK);
+                        webView.loadUrl("http://i.imgur.com/v6TDtLW.gif");
                         //load bomb image
                         break;
                     case 2:
@@ -61,6 +66,7 @@ public class AllTeams extends Activity {
                         teamWrapper.setBackgroundColor(getResources().getColor(R.color.hellcat_pink));
                         roster.setText(R.string.hellcats);
                         roster.setTextColor(Color.BLACK);
+                        webView.loadUrl("http://i.imgur.com/JaSf50P.gif");
                         //load cat image
                         break;
                     case 3:
@@ -68,6 +74,7 @@ public class AllTeams extends Activity {
                         teamWrapper.setBackgroundColor(getResources().getColor(R.color.roller_blue));
                         roster.setTextColor(Color.WHITE);
                         roster.setText(R.string.holy_rollers);
+                        webView.loadUrl("http://i.imgur.com/cvotE4E.gif");
                         //load roller image
                         break;
                     case 4:
@@ -75,6 +82,7 @@ public class AllTeams extends Activity {
                         teamWrapper.setBackgroundColor(getResources().getColor(R.color.puta_red));
                         roster.setText(R.string.putas);
                         roster.setTextColor(Color.BLACK);
+                        webView.loadUrl("http://i.imgur.com/waeEW3p.gif");
                         //load puta image
                         break;
                     case 5:
@@ -82,6 +90,7 @@ public class AllTeams extends Activity {
                         teamWrapper.setBackgroundColor(getResources().getColor(R.color.rhinestone_red));
                         roster.setText(R.string.rhinestone_cowgirls);
                         roster.setTextColor(Color.WHITE);
+                        webView.loadUrl("http://i.imgur.com/GeUBcVe.gif");
 
                         //load rc image
                         break;
@@ -90,6 +99,7 @@ public class AllTeams extends Activity {
                         teamWrapper.setBackgroundColor(getResources().getColor(R.color.guns_teal));
                         roster.setText(R.string.hired_guns);
                         roster.setTextColor(Color.BLACK);
+                        webView.loadUrl("http://i.imgur.com/EwJHAAh.png");
                         //load gun image
                         break;
                     default:

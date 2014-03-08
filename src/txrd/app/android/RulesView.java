@@ -8,6 +8,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.parse.Parse;
+import com.parse.ParseAnalytics;
 
 /**
  * Created by mollyrand on 3/5/14.
@@ -21,6 +23,7 @@ public class RulesView extends Activity{
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Parse.initialize(this, "sx9RN6vXmXy3m3YEDBN8vte3eNDd6cS5bV6AHXCx", "GiQONWITzczG0rXEbOM9QKxfinlmGyz4QJWBM7Am");
         setContentView(R.layout.activity_rules);
 
         choosePositions = (TextView) findViewById(R.id.position_select);
