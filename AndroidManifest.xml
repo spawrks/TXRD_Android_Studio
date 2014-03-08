@@ -19,16 +19,17 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="txrd.app.android.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name="txrd.app.android.AllTeams"
             android:label="@string/title_activity_all_teams"
+            android:screenOrientation="portrait"
             android:parentActivityName="txrd.app.android.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -36,6 +37,7 @@
         </activity>
         <activity
             android:name="txrd.app.android.ScheduleView"
+            android:screenOrientation="portrait"
             android:parentActivityName="txrd.app.android.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -43,6 +45,7 @@
         </activity>
         <activity
             android:name="txrd.app.android.RulesView"
+            android:screenOrientation="portrait"
             android:parentActivityName="txrd.app.android.MainActivity" >
         </activity>
     </application>
