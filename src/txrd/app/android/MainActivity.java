@@ -5,10 +5,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-import com.parse.Parse;
-import com.parse.ParseAnalytics;
-import com.parse.ParseObject;
-
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,6 +12,12 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import com.parse.Parse;
+import com.parse.ParseFile;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
@@ -24,7 +26,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 
 import java.io.InputStream;
-import java.net.URL;
+import java.util.Date;
 
 public class MainActivity extends Activity {
 
@@ -34,6 +36,11 @@ public class MainActivity extends Activity {
     private Button rulesButton = null;
     private ImageView headerImg = null;
     private HeaderGetter getsHeader;
+    private URLGetter urlGetter;
+    private String desc = "Check the schedule for the next bout!";
+    private Date today = new Date();
+    private Date start;
+    private Date end;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +50,23 @@ public class MainActivity extends Activity {
 
         headerImg = (ImageView) findViewById(R.id.main_header);
         getsHeader = new HeaderGetter();
-        getsHeader.execute("https://scontent-b-ord.xx.fbcdn.net/hphotos-prn2/t1/1902980_829402170419614_1300136346_n.jpg");
+        urlGetter = new URLGetter();
+//        getsHeader.execute("https://scontent-b-ord.xx.fbcdn.net/hphotos-prn2/t1/1902980_829402170419614_1300136346_n.jpg");
+
+        ParseObject object;
+        ParseQuery<ParseObject> fileQuery = ParseQuery.getQuery("Images");
+        fileQuery = fileQuery.whereMatches("Description", "Main Header");
+        try{
+            object =  fileQuery.getFirst();
+            Log.e("file", object.getObjectId());
+            desc = object.getString("Content");
+        } catch (com.parse.ParseException e) {
+            object = null;
+            Log.e("Parse", e.getMessage());
+        }
+        urlGetter.execute(object);
+
+        headerImg.setContentDescription(desc);
 
         scheduleButton = (Button) findViewById(R.id.imageButtonSched);
         scheduleButton.setOnClickListener(new View.OnClickListener() {
@@ -112,6 +135,36 @@ public class MainActivity extends Activity {
     public void seeTeams(View view) {
     	Intent intent = new Intent(this, AllTeams.class);
     	startActivity(intent);
+    }
+
+    private class URLGetter extends AsyncTask<ParseObject, Void, String>{
+
+        String theUrl;
+
+        @Override
+        protected String doInBackground(ParseObject... params) {
+            ParseObject headerObject = params[0];
+//            byte[] fileBytes;
+            ParseFile headerFile = headerObject.getParseFile("imgFile");
+            try{
+//                fileBytes = headerFile.getData();
+                Log.e("URL", headerFile.getUrl());
+                theUrl = headerFile.getUrl();
+                return theUrl;
+            } catch(Exception e){
+                Log.e("Fuck", e.getMessage());
+                return null;
+            }
+
+
+        }
+
+        @Override
+        protected void onPostExecute(String string) {
+            super.onPostExecute(string);
+            Log.e("URL",string);
+            getsHeader.execute(string);
+        }
     }
 
     private class HeaderGetter extends AsyncTask<String, Void, Bitmap>{

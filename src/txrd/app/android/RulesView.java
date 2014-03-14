@@ -1,6 +1,7 @@
 package txrd.app.android;
 
 import android.app.Activity;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.Menu;
@@ -30,6 +31,10 @@ public class RulesView extends Activity{
         chooseGameplay = (TextView) findViewById(R.id.gameplay_select);
         choosePenalties = (TextView) findViewById(R.id.penalties_select);
         chosenText = (TextView) findViewById(R.id.selected_rules_text);
+        Typeface font = Typeface.createFromAsset(getAssets(), "Vitesse-Medium.otf");
+        chooseGameplay.setTypeface(font);
+        choosePenalties.setTypeface(font);
+        choosePositions.setTypeface(font);
 
         choosePositions.setOnClickListener(new View.OnClickListener() {
             @Override
