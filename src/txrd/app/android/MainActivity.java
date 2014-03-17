@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -126,10 +125,8 @@ public class MainActivity extends Activity {
     }
     public void openTicketsLink(View v) { 
     //this is good for now, but I'd like to integrate with them in a later version 	
-	    String url = "http://txrd.frontgatetickets.com"; 
-	    Intent i = new Intent(Intent.ACTION_VIEW); 
-	    i.setData(Uri.parse(url)); 
-	    startActivity(i); 
+        Intent intent = new Intent(this, TicketsView.class);
+        startActivity(intent);
 }
 
     public void openRulesView(){
