@@ -36,8 +36,8 @@ public class MainActivity extends Activity {
     private Button rulesButton = null;
     private ImageView headerImg = null;
     private HeaderGetter getsHeader;
-    private URLGetter urlGetter;
     private String desc = "Check the schedule for the next bout!";
+    private String headerURL;
     private Date today = new Date();
     private Date start;
     private Date end;
@@ -50,8 +50,6 @@ public class MainActivity extends Activity {
 
         headerImg = (ImageView) findViewById(R.id.main_header);
         getsHeader = new HeaderGetter();
-        urlGetter = new URLGetter();
-//        getsHeader.execute("https://scontent-b-ord.xx.fbcdn.net/hphotos-prn2/t1/1902980_829402170419614_1300136346_n.jpg");
 
         ParseObject object;
         ParseQuery<ParseObject> fileQuery = ParseQuery.getQuery("Images");
@@ -64,7 +62,15 @@ public class MainActivity extends Activity {
             object = null;
             Log.e("Parse", e.getMessage());
         }
-        urlGetter.execute(object);
+        ParseFile headerFile = object.getParseFile("imgFile");
+        try{
+            Log.e("URL", headerFile.getUrl());
+            headerURL = headerFile.getUrl();
+        } catch(Exception e){
+            Log.e("Fuck", e.getMessage());
+            //TODO: set URL to default header
+        }
+        getsHeader.execute(headerURL);
 
         headerImg.setContentDescription(desc);
 
@@ -135,36 +141,6 @@ public class MainActivity extends Activity {
     public void seeTeams(View view) {
     	Intent intent = new Intent(this, AllTeams.class);
     	startActivity(intent);
-    }
-
-    private class URLGetter extends AsyncTask<ParseObject, Void, String>{
-
-        String theUrl;
-
-        @Override
-        protected String doInBackground(ParseObject... params) {
-            ParseObject headerObject = params[0];
-//            byte[] fileBytes;
-            ParseFile headerFile = headerObject.getParseFile("imgFile");
-            try{
-//                fileBytes = headerFile.getData();
-                Log.e("URL", headerFile.getUrl());
-                theUrl = headerFile.getUrl();
-                return theUrl;
-            } catch(Exception e){
-                Log.e("Fuck", e.getMessage());
-                return null;
-            }
-
-
-        }
-
-        @Override
-        protected void onPostExecute(String string) {
-            super.onPostExecute(string);
-            Log.e("URL",string);
-            getsHeader.execute(string);
-        }
     }
 
     private class HeaderGetter extends AsyncTask<String, Void, Bitmap>{
