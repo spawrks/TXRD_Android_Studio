@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,7 +26,6 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 
 import java.io.InputStream;
-import java.util.Date;
 
 public class MainActivity extends Activity {
 
@@ -34,12 +34,13 @@ public class MainActivity extends Activity {
     private Button teamsButton = null;
     private Button rulesButton = null;
     private ImageView headerImg = null;
+    private ImageView facebookCircle = null;
+    private ImageView twitterCircle = null;
+    private ImageView flickrCircle;
+    private ImageView gplusCircle;
     private HeaderGetter getsHeader;
     private String desc = "Check the schedule for the next bout!";
     private String headerURL;
-    private Date today = new Date();
-    private Date start;
-    private Date end;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,20 +49,24 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         headerImg = (ImageView) findViewById(R.id.main_header);
-        getsHeader = new HeaderGetter();
+        facebookCircle = (ImageView) findViewById(R.id.facebook_circle);
+        twitterCircle = (ImageView) findViewById(R.id.twitter_circle);
+        flickrCircle = (ImageView) findViewById(R.id.flickr_circle);
+        gplusCircle = (ImageView) findViewById(R.id.googleplus_circle);
+        getsHeader = new HeaderGetter();//async task to load header before displaying
 
         ParseObject object;
         ParseQuery<ParseObject> fileQuery = ParseQuery.getQuery("Images");
-        fileQuery = fileQuery.whereMatches("Description", "Main Header");
+        fileQuery = fileQuery.whereMatches("Description", "Main Header");//pull in Parse object currently labeled as Main Header
         try{
             object =  fileQuery.getFirst();
-            Log.e("file", object.getObjectId());
-            desc = object.getString("Content");
+            desc = object.getString("Content");// gets description
         } catch (com.parse.ParseException e) {
             object = null;
             Log.e("Parse", e.getMessage());
         }
-        ParseFile headerFile = object.getParseFile("imgFile");
+        ParseFile headerFile = object.getParseFile("imgFile");//gets URL for file, sends to headergetter
+
         try{
             Log.e("URL", headerFile.getUrl());
             headerURL = headerFile.getUrl();
@@ -71,7 +76,7 @@ public class MainActivity extends Activity {
         }
         getsHeader.execute(headerURL);
 
-        headerImg.setContentDescription(desc);
+        headerImg.setContentDescription(desc);//sets description
 
         scheduleButton = (Button) findViewById(R.id.imageButtonSched);
         scheduleButton.setOnClickListener(new View.OnClickListener() {
@@ -105,6 +110,47 @@ public class MainActivity extends Activity {
                 openRulesView();
             }
         });
+
+        facebookCircle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "http://www.facebook.com/txrollerderby";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        });
+
+        twitterCircle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "https://twitter.com/TXRDRollergirls";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        });
+
+        flickrCircle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "http://www.flickr.com/photos/txrd/collections/";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        });
+
+        gplusCircle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "https://plus.google.com/+texasrollerderby";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        });
+
     }
 
 
@@ -173,11 +219,6 @@ public class MainActivity extends Activity {
                 Log.e("Exception", e.getMessage());
             }
             return null;
-        }
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
         }
 
         @Override

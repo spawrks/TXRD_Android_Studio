@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
@@ -9,16 +9,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:cropToPadding="false"
+        android:layout_alignParentTop="true"
         android:id="@+id/main_header"
         android:src="@drawable/default_header"
         android:contentDescription="@string/header_desc" />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_below="@id/main_header"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginTop="8dp"
-        >
-    <LinearLayout 
+        android:gravity="center_horizontal">
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -29,7 +31,6 @@
    		     android:layout_width="match_parent"
    		     android:layout_height="wrap_content"
    		     android:layout_weight="1"
-   		     android:clickable="true"
    		     android:text="@string/schedule_button" />
 
   		<Button
@@ -37,11 +38,10 @@
   		    android:layout_width="match_parent"
   		    android:layout_height="wrap_content"
   		    android:layout_weight="1"
-  		    android:clickable="true"
   		    android:text="@string/tickets_button" />
    
     </LinearLayout><!--ends first row of buttons  -->
-    <LinearLayout 
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -52,7 +52,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:clickable="true"
             android:onClick="seeTeams"
             android:text="@string/teams"/>
 
@@ -60,11 +59,42 @@
             android:id="@+id/buttonRules"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clickable="true"
             android:layout_weight="1"
             android:text="@string/rules"/>
 
   	</LinearLayout><!--  ends second row of buttons -->
     
 </LinearLayout> <!-- ends all button rows -->
-</LinearLayout>
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="@android:dimen/app_icon_size"
+      android:orientation="horizontal"
+      android:layout_alignParentBottom="true">
+      <ImageView
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:id="@+id/facebook_circle"
+          android:src="@drawable/facebook"
+          android:layout_weight="1"
+          />
+      <ImageView
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:id="@+id/twitter_circle"
+          android:layout_weight="1"
+          android:src="@drawable/twitter"/>
+      <ImageView
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:id="@+id/flickr_circle"
+          android:layout_weight="1"
+          android:src="@drawable/flickr"/>
+      <ImageView
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:id="@+id/googleplus_circle"
+          android:layout_weight="1"
+          android:src="@drawable/youtube"/>
+
+      </LinearLayout>
+</RelativeLayout>
