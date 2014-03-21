@@ -120,6 +120,7 @@ public class MainActivity extends Activity {
                 startActivity(i);
             }
         });
+        facebookCircle.setOnTouchListener(new PinkHighlightListener());
 
         twitterCircle.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,6 +131,7 @@ public class MainActivity extends Activity {
                 startActivity(i);
             }
         });
+        twitterCircle.setOnTouchListener(new PinkHighlightListener());
 
         flickrCircle.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -140,6 +142,7 @@ public class MainActivity extends Activity {
                 startActivity(i);
             }
         });
+        flickrCircle.setOnTouchListener(new PinkHighlightListener());
 
         gplusCircle.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -150,6 +153,7 @@ public class MainActivity extends Activity {
                 startActivity(i);
             }
         });
+        gplusCircle.setOnTouchListener(new PinkHighlightListener());
 
     }
 

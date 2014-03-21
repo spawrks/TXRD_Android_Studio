@@ -4,13 +4,11 @@ import android.app.Activity;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.parse.Parse;
-import com.parse.ParseAnalytics;
 
 /**
  * Created by mollyrand on 3/5/14.
@@ -40,6 +38,9 @@ public class RulesView extends Activity{
             @Override
             public void onClick(View v) {
                 chosenText.setText(R.string.positions_desc);
+                choosePositions.setBackgroundColor(getResources().getColor(R.color.txrd_pink));
+                choosePenalties.setBackgroundColor(getResources().getColor(R.color.black));
+                chooseGameplay.setBackgroundColor(getResources().getColor(R.color.black));
             }
         });
 
@@ -47,6 +48,9 @@ public class RulesView extends Activity{
             @Override
             public void onClick(View v) {
                 chosenText.setText(R.string.gameplay_desc);
+                choosePositions.setBackgroundColor(getResources().getColor(R.color.black));
+                choosePenalties.setBackgroundColor(getResources().getColor(R.color.black));
+                chooseGameplay.setBackgroundColor(getResources().getColor(R.color.txrd_pink));
             }
         });
 
@@ -54,6 +58,9 @@ public class RulesView extends Activity{
             @Override
             public void onClick(View v) {
                 chosenText.setText(R.string.penalties_desc);
+                choosePositions.setBackgroundColor(getResources().getColor(R.color.black));
+                choosePenalties.setBackgroundColor(getResources().getColor(R.color.txrd_pink));
+                chooseGameplay.setBackgroundColor(getResources().getColor(R.color.black));
             }
         });
 
