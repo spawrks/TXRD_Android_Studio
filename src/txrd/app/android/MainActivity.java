@@ -9,9 +9,10 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.parse.Parse;
 import com.parse.ParseFile;
@@ -29,10 +30,10 @@ import java.io.InputStream;
 
 public class MainActivity extends Activity {
 
-    private Button scheduleButton = null;
-    private Button ticketsButton = null;
-    private Button teamsButton = null;
-    private Button rulesButton = null;
+    private ImageView scheduleButton = null;
+    private ImageView ticketsButton = null;
+    private ImageView teamsButton = null;
+    private ImageView rulesButton = null;
     private ImageView headerImg = null;
     private ImageView facebookCircle = null;
     private ImageView twitterCircle = null;
@@ -41,6 +42,7 @@ public class MainActivity extends Activity {
     private HeaderGetter getsHeader;
     private String desc = "Check the schedule for the next bout!";
     private String headerURL;
+    private MenuItem contactUs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,10 +55,13 @@ public class MainActivity extends Activity {
         twitterCircle = (ImageView) findViewById(R.id.twitter_circle);
         flickrCircle = (ImageView) findViewById(R.id.flickr_circle);
         gplusCircle = (ImageView) findViewById(R.id.googleplus_circle);
+
         getsHeader = new HeaderGetter();//async task to load header before displaying
 
         ParseObject object;
         ParseQuery<ParseObject> fileQuery = ParseQuery.getQuery("Images");
+
+
         fileQuery = fileQuery.whereMatches("Description", "Main Header");//pull in Parse object currently labeled as Main Header
         try{
             object =  fileQuery.getFirst();
@@ -78,15 +83,18 @@ public class MainActivity extends Activity {
 
         headerImg.setContentDescription(desc);//sets description
 
-        scheduleButton = (Button) findViewById(R.id.imageButtonSched);
+        scheduleButton = (ImageView) findViewById(R.id.imageButtonSched);
+
         scheduleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openScheduleLink(view);
             }
         });
+        scheduleButton.setOnTouchListener(new PinkHighlightListener());
 
-        ticketsButton = (Button) findViewById(R.id.imageButtonTix);
+        ticketsButton = (ImageView) findViewById(R.id.imageButtonTix);
+        ticketsButton.setOnTouchListener(new PinkHighlightListener());
         ticketsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -95,7 +103,8 @@ public class MainActivity extends Activity {
         
     });
 
-        teamsButton = (Button) findViewById(R.id.buttonTeams);
+        teamsButton = (ImageView) findViewById(R.id.buttonTeams);
+        teamsButton.setOnTouchListener(new PinkHighlightListener());
         teamsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,7 +112,8 @@ public class MainActivity extends Activity {
             }
         });
 
-        rulesButton = (Button) findViewById(R.id.buttonRules);
+        rulesButton = (ImageView) findViewById(R.id.buttonRules);
+        rulesButton.setOnTouchListener(new PinkHighlightListener());
         rulesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -114,7 +124,7 @@ public class MainActivity extends Activity {
         facebookCircle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url = "http://www.facebook.com/txrollerderby";
+                String url = "http://m.facebook.com/txrollerderby";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
                 startActivity(i);
@@ -136,7 +146,7 @@ public class MainActivity extends Activity {
         flickrCircle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url = "http://www.flickr.com/photos/txrd/collections/";
+                String url = "http://m.flickr.com/photos/txrd/collections/";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
                 startActivity(i);
@@ -173,6 +183,7 @@ public class MainActivity extends Activity {
 
     	
     }
+
     public void openTicketsLink(View v) { 
     //this is good for now, but I'd like to integrate with them in a later version 	
         Intent intent = new Intent(this, TicketsView.class);
@@ -188,6 +199,26 @@ public class MainActivity extends Activity {
     public void seeTeams(View view) {
     	Intent intent = new Intent(this, AllTeams.class);
     	startActivity(intent);
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case R.id.action_contact_us:
+                Intent i = new Intent(Intent.ACTION_SEND);
+                i.setType("message/rfc822");
+                i.putExtra(Intent.EXTRA_SUBJECT, "Message from TXRD App");
+                i.putExtra(Intent.EXTRA_EMAIL, new String[]{"info@txrd.com"} );
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                try{
+                    startActivity(Intent.createChooser(i,"Send mail..."));
+                } catch(android.content.ActivityNotFoundException ex){
+                    Toast.makeText(MainActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+                }
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
     }
 
     private class HeaderGetter extends AsyncTask<String, Void, Bitmap>{
@@ -231,5 +262,6 @@ public class MainActivity extends Activity {
             headerImg.setImageBitmap(bitmap);
         }
     }
+
 }
 

@@ -7,6 +7,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
+import java.util.Calendar;
+
 public class ScheduleView extends Activity {
 
     private ImageView schedule;
@@ -15,6 +17,10 @@ public class ScheduleView extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.schedulecard);
+        Calendar calendar = Calendar.getInstance();//to get current  year
+        int year = calendar.get(Calendar.YEAR);//gets current year
+        this.setTitle(String.valueOf(year) + " Season Schedule");
+        schedule = (ImageView) findViewById(R.id.schedule_card);
         // Show the Up button in the action bar.
         setupActionBar();
     }
@@ -31,7 +37,7 @@ public class ScheduleView extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.schedule_card, menu);
+        getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 

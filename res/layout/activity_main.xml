@@ -15,86 +15,99 @@
         android:contentDescription="@string/header_desc" />
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="@android:dimen/app_icon_size"
+        android:orientation="horizontal"
+        android:id="@+id/socialrow"
+        android:layout_alignParentBottom="true">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/facebook_circle"
+            android:src="@drawable/facebook"
+            android:layout_weight="1"
+            />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/twitter_circle"
+            android:layout_weight="1"
+            android:src="@drawable/twitter"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/flickr_circle"
+            android:layout_weight="1"
+            android:src="@drawable/flickr"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/googleplus_circle"
+            android:layout_weight="1"
+            android:src="@drawable/googleplus"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_below="@id/main_header"
         android:layout_height="wrap_content"
+        android:layout_above="@id/socialrow"
         android:orientation="vertical"
         android:layout_marginTop="8dp"
         android:gravity="center_horizontal">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_margin="8dp"
         android:orientation="horizontal">
         
-   		 <Button
+   		 <ImageView
    		     android:id="@+id/imageButtonSched"
    		     android:layout_width="match_parent"
    		     android:layout_height="wrap_content"
+             android:padding="16dp"
+             android:src="@drawable/nav_calendar"
    		     android:layout_weight="1"
    		     android:text="@string/schedule_button" />
 
-  		<Button
+  		<ImageView
   		    android:id="@+id/imageButtonTix"
-  		    android:layout_width="match_parent"
+            android:src="@drawable/nav_tickets"
+            android:layout_width="match_parent"
   		    android:layout_height="wrap_content"
-  		    android:layout_weight="1"
-  		    android:text="@string/tickets_button" />
+            android:padding="8dp"
+            android:layout_weight="1"
+  		    android:text="@string/buy_tickets" />
    
     </LinearLayout><!--ends first row of buttons  -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_margin="8dp"
         android:orientation="horizontal">
   		
-        <Button
+        <ImageView
             android:id="@+id/buttonTeams"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:src="@drawable/nav_teams"
             android:layout_weight="1"
             android:onClick="seeTeams"
             android:text="@string/teams"/>
 
-        <Button
+        <ImageView
             android:id="@+id/buttonRules"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:src="@drawable/nav_rules"
             android:layout_weight="1"
             android:text="@string/rules"/>
 
   	</LinearLayout><!--  ends second row of buttons -->
     
 </LinearLayout> <!-- ends all button rows -->
-  <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="@android:dimen/app_icon_size"
-      android:orientation="horizontal"
-      android:layout_alignParentBottom="true">
-      <ImageView
-          android:layout_width="0dp"
-          android:layout_height="match_parent"
-          android:id="@+id/facebook_circle"
-          android:src="@drawable/facebook"
-          android:layout_weight="1"
-          />
-      <ImageView
-          android:layout_width="0dp"
-          android:layout_height="match_parent"
-          android:id="@+id/twitter_circle"
-          android:layout_weight="1"
-          android:src="@drawable/twitter"/>
-      <ImageView
-          android:layout_width="0dp"
-          android:layout_height="match_parent"
-          android:id="@+id/flickr_circle"
-          android:layout_weight="1"
-          android:src="@drawable/flickr"/>
-      <ImageView
-          android:layout_width="0dp"
-          android:layout_height="match_parent"
-          android:id="@+id/googleplus_circle"
-          android:layout_weight="1"
-          android:src="@drawable/youtube"/>
 
-      </LinearLayout>
 </RelativeLayout>

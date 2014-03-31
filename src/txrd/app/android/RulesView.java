@@ -19,20 +19,23 @@ public class RulesView extends Activity{
     private TextView choosePositions = null;
     private TextView chooseGameplay = null;
     private TextView choosePenalties = null;
+    private TextView rulesHeader;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Parse.initialize(this, "sx9RN6vXmXy3m3YEDBN8vte3eNDd6cS5bV6AHXCx", "GiQONWITzczG0rXEbOM9QKxfinlmGyz4QJWBM7Am");
         setContentView(R.layout.activity_rules);
-
+        this.setTitle(R.string.the_rules);
         choosePositions = (TextView) findViewById(R.id.position_select);
         chooseGameplay = (TextView) findViewById(R.id.gameplay_select);
         choosePenalties = (TextView) findViewById(R.id.penalties_select);
         chosenText = (TextView) findViewById(R.id.selected_rules_text);
-        Typeface font = Typeface.createFromAsset(getAssets(), "Vitesse-Medium.otf");
+        rulesHeader = (TextView) findViewById(R.id.rulesHeader);
+        Typeface font = Typeface.createFromAsset(getAssets(), "Tungsten-Bold.otf");
         chooseGameplay.setTypeface(font);
         choosePenalties.setTypeface(font);
         choosePositions.setTypeface(font);
+        rulesHeader.setTypeface(font);
 
         choosePositions.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,7 +66,6 @@ public class RulesView extends Activity{
                 chooseGameplay.setBackgroundColor(getResources().getColor(R.color.black));
             }
         });
-
 
     }
 

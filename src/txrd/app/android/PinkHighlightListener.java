@@ -24,6 +24,6 @@ public class PinkHighlightListener implements View.OnTouchListener {
                 imageView.clearColorFilter();
             }
         }
-        return false;
+        return false;//if it returns true the onclicklistener won't work
     }
 }
